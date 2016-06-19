@@ -34,11 +34,13 @@ namespace M120_LB2_FS16
          Application.Current.Properties["job_id"] = "5";
          Application.Current.Properties["proj_id"] = "5";
 
-            datenBereitstellen();
+         datenBereitstellen();
+         pagesFrame.Navigate(new Uri("calendar.xaml", UriKind.Relative)); // On program initalize open start frame
+
         }
-        
+
         #region Testdaten
-         private void demoDatenMitarbeiter()
+        private void demoDatenMitarbeiter()
         {
          Mitarbeiter ma1 = new Mitarbeiter();
          ma1.ID = 1;

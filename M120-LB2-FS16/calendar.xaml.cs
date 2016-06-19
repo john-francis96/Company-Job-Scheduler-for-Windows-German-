@@ -34,18 +34,18 @@ namespace M120_LB2_FS16
         public void monthHandler_Click(object sender, RoutedEventArgs e)
         {
             Button myButton = (Button)sender;
-            int to_change;
+            int to_change; // month forward or backward
             var bool2 = Int32.TryParse(myButton.Tag.ToString(), out to_change);
             if (Application.Current.Properties["month_change"] != null)
             {
-                int app;
+                int app; // current month from which to add/subtract month
                 var bool3 = Int32.TryParse(Application.Current.Properties["month_change"].ToString(), out app);
                 app += to_change;
                 Application.Current.Properties["month_change"] = app.ToString();
             }
             else
             {
-                Application.Current.Properties["month_change"] = bool2.ToString();
+                Application.Current.Properties["month_change"] = to_change.ToString();
             }
             constructCalendar();
 
@@ -81,7 +81,7 @@ namespace M120_LB2_FS16
 
             // Calendar header
             TextBlock month_name = new TextBlock();
-            month_name.Text = now.ToString("MMM");
+            month_name.Text = now.ToString("MMMM") + " " + now.ToString("yyyy");
             month_name.TextAlignment = TextAlignment.Center;
             this.calendarParent.Children.Add(month_name);
             Grid.SetRow(month_name, 0);
@@ -110,8 +110,7 @@ namespace M120_LB2_FS16
 
             List<Einsatz> jobList = Bibliothek.Einsatz_Alle();
 
-            // Draw 28 days... base number for everymonth
-            // Draw 28 days... base number for everymonth
+            // Draw 28 days... base number for everymonth & is a multiple of 7 which is cal no. of columns
             for (var k = 0; k < 4; k++)
             {
                 for (var l = 0; l < 7; l++)
@@ -130,7 +129,7 @@ namespace M120_LB2_FS16
                     ListBox cell = new ListBox();
                     for (var i = 0; i < jobList.Count(); i++)
                     {
-                        if (jobList[i].Start.DayOfYear <= day.DayOfYear && jobList[i].Ende.DayOfYear >= day.DayOfYear) // for jobs in current month
+                        if (jobList[i].Start.DayOfYear <= day.DayOfYear && jobList[i].Ende.DayOfYear >= day.DayOfYear && jobList[i].Ende.Year == day.Year) // for jobs in current month
                         {
                             ListBoxItem tblock2 = new ListBoxItem();
                             tblock2.Tag = jobList[i].ID; // Set id tag to open proper job on entry double click
