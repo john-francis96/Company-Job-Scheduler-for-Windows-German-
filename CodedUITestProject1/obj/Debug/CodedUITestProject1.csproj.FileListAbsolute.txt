@@ -1,0 +1,5 @@
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\CodedUITestProject1\bin\Debug\CodedUITestProject1.dll
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\CodedUITestProject1\bin\Debug\CodedUITestProject1.pdb
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\CodedUITestProject1\obj\Debug\CodedUITestProject1.csprojResolveAssemblyReference.cache
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\CodedUITestProject1\obj\Debug\CodedUITestProject1.dll
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\CodedUITestProject1\obj\Debug\CodedUITestProject1.pdb

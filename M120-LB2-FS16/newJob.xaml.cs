@@ -138,18 +138,26 @@ namespace M120_LB2_FS16
                 newJob.Projekt = Bibliothek.Projekt_nach_ID(proj_id);
                 newJob.Start = this.jobStart.SelectedDate.Value;
                 newJob.Ende = this.jobEnd.SelectedDate.Value;
-                Bibliothek.EinsatzNeu(newJob);
 
-                // Job Created - show success and reset form
-                this.jobName.Text = "";
-                this.jobMit.SelectedIndex = 1;
-                this.jobProj.SelectedIndex = 1;
-                this.jobStart.SelectedDate = null;
-                this.jobEnd.SelectedDate = null;
+                // check validity
+                bool valid = isValid(newJob, new Einsatz(), false);
 
-                this.success.Text = "Einsatz erfolgrichlich erstellt";
-                this.success.Visibility = Visibility.Visible;
+                if (valid == true)
+                {
+                    // Create New Job
+                    Bibliothek.EinsatzNeu(newJob);
 
+                    // Job Created - show success and reset form
+                    this.jobName.Text = "";
+                    this.jobMit.SelectedIndex = 1;
+                    this.jobProj.SelectedIndex = 1;
+                    this.jobStart.SelectedDate = null;
+                    this.jobEnd.SelectedDate = null;
+
+                    this.success.Text = "Einsatz erfolgrichlich erstellt";
+                    this.success.Visibility = Visibility.Visible;
+                }
+              
             }
 
             // Edit Job
@@ -157,7 +165,10 @@ namespace M120_LB2_FS16
             {
                 int id;
                 var bool6 = Int32.TryParse(this.btnID.Tag.ToString(), out id);
-                Einsatz job = Bibliothek.Einsatz_nach_ID(id);
+
+                // Einsatz job = Bibliothek.Einsatz_nach_ID(id);
+                Einsatz job = new Einsatz();
+
                 job.Name = this.jobName.Text;
 
                 // Get Mitarbeiter und Projekte ID
@@ -170,19 +181,79 @@ namespace M120_LB2_FS16
                 job.Projekt = Bibliothek.Projekt_nach_ID(proj_id);
                 job.Start = this.jobStart.SelectedDate.Value;
                 job.Ende = this.jobEnd.SelectedDate.Value;
-                this.btnID.Tag = ""; // reset edit job id holder
 
-                // Job Edited - show success and reset form
-                this.jobName.Text = "";
-                this.jobMit.SelectedIndex = 1;
-                this.jobProj.SelectedIndex = 1;
-                this.jobStart.SelectedDate = null;
-                this.jobEnd.SelectedDate = null;
+                bool valid = isValid(job, Bibliothek.Einsatz_nach_ID(id), true);
+                if (valid == true)
+                {
+                    Einsatz original_job = Bibliothek.Einsatz_nach_ID(id);
+                    original_job.Name = this.jobName.Text;
 
-                this.success.Text = "Einsatz erfolgrichlich gearbeitet";
-                this.success.Visibility = Visibility.Visible;
+                    // Get Mitarbeiter und Projekte ID
+                    int _mit_id;
+                    var _bool1 = Int32.TryParse((jobMit.SelectedItem as ComboboxItem).Value.ToString(), out _mit_id);
+                    int _proj_id;
+                    var _bool2 = Int32.TryParse((jobProj.SelectedItem as ComboboxItem).Value.ToString(), out _proj_id);
+
+                    original_job.Mitarbeiter = Bibliothek.Mitarbeiter_nach_ID(_mit_id); // Tag has id and save Bibliotek get from id
+                    original_job.Projekt = Bibliothek.Projekt_nach_ID(_proj_id);
+                    original_job.Start = this.jobStart.SelectedDate.Value;
+                    original_job.Ende = this.jobEnd.SelectedDate.Value;
+
+                    this.btnID.Tag = ""; // reset edit job id holder
+
+                    // Job Edited - show success and reset form
+                    this.jobName.Text = "";
+                    this.jobMit.SelectedIndex = 1;
+                    this.jobProj.SelectedIndex = 1;
+                    this.jobStart.SelectedDate = null;
+                    this.jobEnd.SelectedDate = null;
+
+                    this.success.Text = "Einsatz erfolgrichlich gearbeitet";
+                    this.success.Visibility = Visibility.Visible;
+                }
+
             }
 
+        }
+
+        private bool isValid(Einsatz newJob, Einsatz oldJob, bool isEdit) // oldJob only use when editing job
+        {
+            // check for invalidation
+            bool valid = true;
+            // Check if Mitarbeiter already has a job today
+            int daydiff = newJob.Ende.DayOfYear - newJob.Start.DayOfYear;
+            for (int i = 0; i <= daydiff; i++)
+            {
+                if (isEdit == true)
+                {
+                    if (oldJob.Start.DayOfYear <= newJob.Start.AddDays(i).DayOfYear && oldJob.Ende.DayOfYear >= newJob.Start.AddDays(i).DayOfYear)
+                    {
+                        // Only run when in edit mode
+                        // Day already in original job so no need to check - skip to next day
+                        continue;
+                    }
+                }
+                List<Einsatz> jobList = Bibliothek.Einsaetz_an_Datum(newJob.Start.AddDays(i));
+                for (var k = 0; k < jobList.Count(); k++)
+                {
+                    if (jobList[k].Mitarbeiter.ID == newJob.Mitarbeiter.ID)
+                    {
+                        valid = false;
+                        this.success.Text = "Doppeleinsatz für Mitarbeiter. Nicht Erlaubt";
+                        this.success.Visibility = Visibility.Visible;
+                    }
+                }
+            }
+
+            // Check if job out of project bounds
+            if (newJob.Projekt.EndDatum.DayOfYear < newJob.Ende.DayOfYear || newJob.Projekt.StartDatum.DayOfYear > newJob.Start.DayOfYear)
+            {
+                // Display Error
+                this.success.Text = "ERROR";
+                this.success.Visibility = Visibility.Visible;
+                valid = false;
+            }
+            return valid;
         }
     }
 
