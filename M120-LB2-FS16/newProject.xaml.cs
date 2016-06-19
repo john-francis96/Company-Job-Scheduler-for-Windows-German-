@@ -40,6 +40,7 @@ namespace M120_LB2_FS16
                 this.projStart.SelectedDate = proj.StartDatum;
                 this.projEnd.SelectedDate = proj.EndDatum;
 
+                this.projSubmit.Tag = "edit";
                 // Create hidden button to save employee id
                 this.btnID.Tag = proj_id.ToString();
 
@@ -77,6 +78,18 @@ namespace M120_LB2_FS16
                 newProj.StartDatum = this.projStart.SelectedDate.Value;
                 newProj.EndDatum = this.projEnd.SelectedDate.Value;
                 Bibliothek.Projekt_Neu(newProj);
+
+                // Project Created - show success and reset form
+                this.projName.Text = "";
+                this.projOffene.Text = "";
+                this.projGesamt.Text = "";
+                this.projStart.SelectedDate = null;
+                this.projEnd.SelectedDate = null;
+                this.projAktiv.IsChecked = false;
+           
+                this.success.Text = "Projekt erfolgrichlich erstellt";
+                this.success.Visibility = Visibility.Visible;
+
             }
 
             // Edit Project
@@ -99,6 +112,18 @@ namespace M120_LB2_FS16
                 proj.StartDatum = this.projStart.SelectedDate.Value;
                 proj.EndDatum = this.projEnd.SelectedDate.Value;
                 this.btnID.Tag = ""; // reset edit job id holder
+
+                // Project Edited - show success and reset form
+                this.projName.Text = "";
+                this.projOffene.Text = "";
+                this.projGesamt.Text = "";
+                this.projStart.SelectedDate = null;
+                this.projEnd.SelectedDate = null;
+                this.projAktiv.IsChecked = false;
+
+                this.success.Text = "Projekt erfolgrichlich gearbeitet";
+                this.success.Visibility = Visibility.Visible;
+
             }
 
         }

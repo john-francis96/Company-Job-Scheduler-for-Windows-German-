@@ -63,6 +63,14 @@ namespace M120_LB2_FS16
                 newMitarbeiter.Vorname = this.mitVorname.Text;
                 newMitarbeiter.IstAktiv = this.mitAktiv.IsChecked.Value;
                 Bibliothek.Mitarbeiter_Neu(newMitarbeiter);
+
+                // Employee entry created - show success and reset form
+                this.mitName.Text = "";
+                this.mitVorname.Text = "";
+                this.mitAktiv.IsChecked = false;
+
+                this.success.Text = "Mitarbeiter erfolgrichlich erstellt";
+                this.success.Visibility = Visibility.Visible;
             }
 
             // Edit Mitarbeiter
@@ -75,6 +83,14 @@ namespace M120_LB2_FS16
                 mit.Vorname = this.mitVorname.Text;
                 mit.IstAktiv = this.mitAktiv.IsChecked.Value;
                 this.btnID.Tag = ""; // reset edit employee id holder
+
+                // Employee entry edited - show success and reset form
+                this.mitName.Text = "";
+                this.mitVorname.Text = "";
+                this.mitAktiv.IsChecked = false;
+
+                this.success.Text = "Mitarbeiter erfolgrichlich gearbeitet";
+                this.success.Visibility = Visibility.Visible;
             }
 
         }

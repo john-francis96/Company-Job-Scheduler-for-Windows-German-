@@ -97,11 +97,11 @@ namespace M120_LB2_FS16
                     }
                 }
 
-                //this.jobMit.Tag = job.Mitarbeiter.ID.ToString();
-                //this.jobProj.Tag = job.Projekt.ID.ToString();
-                
+               
                 this.jobStart.SelectedDate = job.Start;
                 this.jobEnd.SelectedDate = job.Ende;
+
+                this.jobSubmit.Tag = "edit";
 
                 // Create hidden button to save employee id
                 this.btnID.Tag = job_id.ToString();
@@ -139,6 +139,17 @@ namespace M120_LB2_FS16
                 newJob.Start = this.jobStart.SelectedDate.Value;
                 newJob.Ende = this.jobEnd.SelectedDate.Value;
                 Bibliothek.EinsatzNeu(newJob);
+
+                // Job Created - show success and reset form
+                this.jobName.Text = "";
+                this.jobMit.SelectedIndex = 1;
+                this.jobProj.SelectedIndex = 1;
+                this.jobStart.SelectedDate = null;
+                this.jobEnd.SelectedDate = null;
+
+                this.success.Text = "Einsatz erfolgrichlich erstellt";
+                this.success.Visibility = Visibility.Visible;
+
             }
 
             // Edit Job
@@ -160,6 +171,16 @@ namespace M120_LB2_FS16
                 job.Start = this.jobStart.SelectedDate.Value;
                 job.Ende = this.jobEnd.SelectedDate.Value;
                 this.btnID.Tag = ""; // reset edit job id holder
+
+                // Job Edited - show success and reset form
+                this.jobName.Text = "";
+                this.jobMit.SelectedIndex = 1;
+                this.jobProj.SelectedIndex = 1;
+                this.jobStart.SelectedDate = null;
+                this.jobEnd.SelectedDate = null;
+
+                this.success.Text = "Einsatz erfolgrichlich gearbeitet";
+                this.success.Visibility = Visibility.Visible;
             }
 
         }
