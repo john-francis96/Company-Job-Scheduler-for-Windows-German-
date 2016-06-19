@@ -107,7 +107,7 @@ namespace M120_LB2_FS16
                 this.btnID.Tag = job_id.ToString();
 
                 // Edit window opened and loaded.. reset trigger property
-                Application.Current.Properties["mit_edit_id"] = null;
+                Application.Current.Properties["job_edit_id"] = null;
             }
         }
 

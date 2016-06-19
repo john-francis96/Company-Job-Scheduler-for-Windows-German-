@@ -31,7 +31,7 @@ namespace M120_LB2_FS16
          InitializeComponent();
 
          Application.Current.Properties["mit_id"] = "3";
-         Application.Current.Properties["job_id"] = "3";
+         Application.Current.Properties["job_id"] = "5";
          Application.Current.Properties["proj_id"] = "5";
 
             datenBereitstellen();

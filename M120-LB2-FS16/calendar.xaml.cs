@@ -133,6 +133,9 @@ namespace M120_LB2_FS16
                         if (jobList[i].Start.DayOfYear <= day.DayOfYear && jobList[i].Ende.DayOfYear >= day.DayOfYear) // for jobs in current month
                         {
                             ListBoxItem tblock2 = new ListBoxItem();
+                            tblock2.Tag = jobList[i].ID; // Set id tag to open proper job on entry double click
+                            tblock2.MouseDoubleClick += this.lsJob_Handler;
+
                             tblock2.Content = jobList[i].Name.ToString();
                             tblock2.FontSize = 8;
                             tblock2.Height = 20;
@@ -169,10 +172,12 @@ namespace M120_LB2_FS16
                 ListBox cell = new ListBox();
                 for (var i = 0; i < jobList.Count(); i++)
                 {
-                    //if (jobList[i].Start.Date >= day.Date && jobList[i].Ende.Date >= day.Date) // for jobs in current month
-                    if (jobList[i].Start.Date == day.Date) // for jobs in current month
+                    if (jobList[i].Start.DayOfYear <= day.DayOfYear && jobList[i].Ende.DayOfYear >= day.DayOfYear) // for jobs in current month
                     {
                         ListBoxItem tblock2 = new ListBoxItem();
+                        tblock2.Tag = jobList[i].ID; // Set id tag to open proper job on entry double click
+                        tblock2.MouseDoubleClick += this.lsJob_Handler;
+
                         tblock2.Content = jobList[i].Name.ToString();
                         tblock2.FontSize = 8;
                         tblock2.Height = 20;
@@ -188,6 +193,14 @@ namespace M120_LB2_FS16
                 Grid.SetRow(cellGrid, 5);
                 Grid.SetColumn(cellGrid, j);
             }
+        }
+        public void lsJob_Handler(object sender, RoutedEventArgs e)
+        {
+            ListBoxItem myButton = (ListBoxItem)sender;
+
+            Application.Current.Properties["job_edit_id"] = myButton.Tag.ToString();
+            NavigationService.Navigate(new Uri("newJob.xaml", UriKind.Relative));
+
         }
     }
 }
