@@ -130,7 +130,7 @@ namespace M120_LB2_FS16
                     ListBox cell = new ListBox();
                     for (var i = 0; i < jobList.Count(); i++)
                     {
-                        if (jobList[i].Start <= day && jobList[i].Ende <= day) // for jobs in current month
+                        if (jobList[i].Start.DayOfYear <= day.DayOfYear && jobList[i].Ende.DayOfYear >= day.DayOfYear) // for jobs in current month
                         {
                             ListBoxItem tblock2 = new ListBoxItem();
                             tblock2.Content = jobList[i].Name.ToString();
