@@ -1,0 +1,43 @@
+C:\Users\root\Desktop\M120\AB07\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.exe.config
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.exe.config
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.csprojResolveAssemblyReference.cache
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\MainWindow.g.cs
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\App.g.cs
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16_MarkupCompile.cache
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16_MarkupCompile.lref
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.exe
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.pdb
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\MainWindow.baml
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.g.resources
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120_LB2_FS16.Properties.Resources.resources
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.csproj.GenerateResource.Cache
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.exe
+C:\Users\root\Desktop\M120\LB2\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.pdb
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.exe.config
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.exe
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.pdb
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.exe
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\bin\Debug\M120-LB2-FS16.pdb
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.csprojResolveAssemblyReference.cache
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\MainWindow.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\App.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16_MarkupCompile.cache
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16_MarkupCompile.lref
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\MainWindow.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.g.resources
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120_LB2_FS16.Properties.Resources.resources
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\M120-LB2-FS16.csproj.GenerateResource.Cache
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\newEmployee.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\newEmployee.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\newProject.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\newProject.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\newJob.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\newJob.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\calendar.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\calendar.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\listEmployee.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\listEmployee.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\listJob.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\listJob.baml
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\listProject.g.cs
+C:\Users\John\Google Drive\workspace\Test2_c#\Aufgabenstellung\M120-LB2-FS16\M120-LB2-FS16\obj\Debug\listProject.baml
