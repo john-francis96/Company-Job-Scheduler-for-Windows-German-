@@ -71,7 +71,7 @@ namespace M120_LB2_FS16
         }
         public static List<Einsatz> Einsaetz_an_Datum(DateTime tag)
         {
-            return (from element in Einsaetze where element.Start.DayOfYear >= tag.DayOfYear && element.Ende.DayOfYear <= tag.DayOfYear && tag.Year == element.Start.Year select element).ToList();
+            return (from element in Einsaetze where element.Start.DayOfYear <= tag.DayOfYear && element.Ende.DayOfYear >= tag.DayOfYear && tag.Year == element.Start.Year select element).ToList();
         }
         #endregion
     }

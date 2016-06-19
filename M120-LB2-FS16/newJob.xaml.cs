@@ -155,6 +155,7 @@ namespace M120_LB2_FS16
                     this.jobEnd.SelectedDate = null;
 
                     this.success.Text = "Einsatz erfolgrichlich erstellt";
+                    this.success.Background = Brushes.LimeGreen;
                     this.success.Visibility = Visibility.Visible;
                 }
               
@@ -209,6 +210,7 @@ namespace M120_LB2_FS16
                     this.jobEnd.SelectedDate = null;
 
                     this.success.Text = "Einsatz erfolgrichlich gearbeitet";
+                    this.success.Background = Brushes.LimeGreen;
                     this.success.Visibility = Visibility.Visible;
                 }
 
@@ -239,7 +241,8 @@ namespace M120_LB2_FS16
                     if (jobList[k].Mitarbeiter.ID == newJob.Mitarbeiter.ID)
                     {
                         valid = false;
-                        this.success.Text = "Doppeleinsatz für Mitarbeiter. Nicht Erlaubt";
+                        this.success.Text = "Doppeleinsatz für Mitarbeiter. Das ist Nicht Erlaubt!";
+                        this.success.Background = Brushes.Red;
                         this.success.Visibility = Visibility.Visible;
                     }
                 }
@@ -249,7 +252,8 @@ namespace M120_LB2_FS16
             if (newJob.Projekt.EndDatum.DayOfYear < newJob.Ende.DayOfYear || newJob.Projekt.StartDatum.DayOfYear > newJob.Start.DayOfYear)
             {
                 // Display Error
-                this.success.Text = "ERROR";
+                this.success.Text = "Einsatz Zeitspanne ausserhalb Projekt Zeitspanne!";
+                this.success.Background = Brushes.Red;
                 this.success.Visibility = Visibility.Visible;
                 valid = false;
             }
