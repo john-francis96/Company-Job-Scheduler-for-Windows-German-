@@ -29,7 +29,7 @@ namespace M120_LB2_FS16
             {
                 ListBoxItem job = new ListBoxItem();
                 job.Tag = jobList[i].ID;
-                job.Content = jobList[i].Name;
+                job.Content = jobList[i].Name + " - " + jobList[i].Start.Date;
                 job.Background = Brushes.White;
                 job.MouseDoubleClick += this.lsJob_Handler;
                 this.jobsListBox.Items.Add(job);

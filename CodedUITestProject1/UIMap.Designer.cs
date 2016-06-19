@@ -212,6 +212,270 @@ namespace CodedUITestProject1
             Mouse.Click(uISpeichernButton1, new Point(29, 12));
         }
         
+        /// <summary>
+        /// CreateJob - Use 'CreateJobParams' to pass parameters into this method.
+        /// </summary>
+        public void CreateJob()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WpfButton uINeueEinsatzButton = this.UIMainWindowWindow.UINeueEinsatzButton;
+            WpfEdit uIJobNameEdit = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobNameEdit;
+            WpfComboBox uIJobMitComboBox = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobMitComboBox;
+            WpfComboBox uIJobProjComboBox = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobProjComboBox;
+            WpfDatePicker uIJobStartDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobStartDatePicker;
+            WpfDatePicker uIJobEndDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobEndDatePicker;
+            WpfButton uISpeichernButton1 = this.UIMainWindowWindow.UINewEmployeexamlPane.UISpeichernButton1;
+            WpfButton uIEinsatzListenansichtButton = this.UIMainWindowWindow.UIEinsatzListenansichtButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(80, 309));
+
+            // Click 'Neue Einsatz' button
+            Mouse.Click(uINeueEinsatzButton, new Point(119, 8));
+
+            // Type 'Test' in 'jobName' text box
+            uIJobNameEdit.Text = this.CreateJobParams.UIJobNameEditText;
+
+            // Select 'Affolter' in 'jobMit' combo box
+            uIJobMitComboBox.SelectedItem = this.CreateJobParams.UIJobMitComboBoxSelectedItem;
+
+            // Select 'Projekt YellowLabel' in 'jobProj' combo box
+            uIJobProjComboBox.SelectedItem = this.CreateJobParams.UIJobProjComboBoxSelectedItem;
+
+            // Select '06-Jun-2016' in 'jobStart' date picker
+            uIJobStartDatePicker.DateAsString = this.CreateJobParams.UIJobStartDatePickerDateAsString;
+
+            // Select '06-Jun-2016' in 'jobEnd' date picker
+            uIJobEndDatePicker.DateAsString = this.CreateJobParams.UIJobEndDatePickerDateAsString;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton1, new Point(31, 12));
+
+            // Click 'Einsatz Listenansicht' button
+            Mouse.Click(uIEinsatzListenansichtButton, new Point(126, 8));
+        }
+        
+        /// <summary>
+        /// AssertJobCreated - Use 'AssertJobCreatedExpectedValues' to pass parameters into this method.
+        /// </summary>
+        public void AssertJobCreated()
+        {
+            #region Variable Declarations
+            WpfListItem uITestListItem = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobsListBoxList.UITestListItem;
+            #endregion
+
+            // Verify that the 'Name' property of 'Test' list item equals 'Test'
+            Assert.AreEqual(this.AssertJobCreatedExpectedValues.UITestListItemName, uITestListItem.Name, "Failed to Create Job \"Test\"");
+        }
+        
+        /// <summary>
+        /// CleanUp
+        /// </summary>
+        public void CleanUp()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WinButton uICloseButton = this.UIMainWindowWindow1.UICloseButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(441, 312));
+
+            // Click 'Close' button
+            Mouse.Click(uICloseButton, new Point(28, 17));
+        }
+        
+        /// <summary>
+        /// EditJob - Use 'EditJobParams' to pass parameters into this method.
+        /// </summary>
+        public void EditJob()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WpfListItem uITest1ListItem = this.UIMainWindowWindow.UINewEmployeexamlPane.UIItemList.UITest1ListItem;
+            WpfDatePicker uIJobStartDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobStartDatePicker;
+            WpfDatePicker uIJobEndDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobEndDatePicker;
+            WpfButton uISpeichernButton1 = this.UIMainWindowWindow.UINewEmployeexamlPane.UISpeichernButton1;
+            WpfButton uIEinsatzListenansichtButton = this.UIMainWindowWindow.UIEinsatzListenansichtButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(115, 300));
+
+            // Double-Click 'Test1' list item
+            Mouse.DoubleClick(uITest1ListItem, new Point(35, 5));
+
+            // Select '08-Jun-2016' in 'jobStart' date picker
+            uIJobStartDatePicker.DateAsString = this.EditJobParams.UIJobStartDatePickerDateAsString;
+
+            // Select '08-Jun-2016' in 'jobEnd' date picker
+            uIJobEndDatePicker.DateAsString = this.EditJobParams.UIJobEndDatePickerDateAsString;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton1, new Point(39, 6));
+
+            // Click 'Einsatz Listenansicht' button
+            Mouse.Click(uIEinsatzListenansichtButton, new Point(149, 9));
+        }
+        
+        /// <summary>
+        /// JobEdit - Use 'JobEditParams' to pass parameters into this method.
+        /// </summary>
+        public void JobEdit()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WpfListItem uITest1ListItem = this.UIMainWindowWindow.UINewEmployeexamlPane.UIItemList.UITest1ListItem;
+            WpfDatePicker uIJobStartDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobStartDatePicker;
+            WpfDatePicker uIJobEndDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobEndDatePicker;
+            WpfButton uISpeichernButton1 = this.UIMainWindowWindow.UINewEmployeexamlPane.UISpeichernButton1;
+            WpfButton uIEinsatzListenansichtButton = this.UIMainWindowWindow.UIEinsatzListenansichtButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(108, 288));
+
+            // Double-Click 'Test1' list item
+            Mouse.DoubleClick(uITest1ListItem, new Point(40, 11));
+
+            // Select '08-Jun-2016' in 'jobStart' date picker
+            uIJobStartDatePicker.DateAsString = this.JobEditParams.UIJobStartDatePickerDateAsString;
+
+            // Select '08-Jun-2016' in 'jobEnd' date picker
+            uIJobEndDatePicker.DateAsString = this.JobEditParams.UIJobEndDatePickerDateAsString;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton1, new Point(40, 8));
+
+            // Click 'Einsatz Listenansicht' button
+            Mouse.Click(uIEinsatzListenansichtButton, new Point(123, 5));
+        }
+        
+        /// <summary>
+        /// CheckEditJob - Use 'CheckEditJobExpectedValues' to pass parameters into this method.
+        /// </summary>
+        public void CheckEditJob()
+        {
+            #region Variable Declarations
+            WpfListItem uITest1682016120000AMListItem = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobsListBoxList.UITest1682016120000AMListItem;
+            #endregion
+
+            // Verify that the 'Name' property of 'Test1 - 6/8/2016 12:00:00 AM' list item equals 'Test1 - 6/8/2016 12:00:00 AM'
+            Assert.AreEqual(this.CheckEditJobExpectedValues.UITest1682016120000AMListItemName, uITest1682016120000AMListItem.Name, "Check If Change Success");
+        }
+        
+        /// <summary>
+        /// CleanUpEdit
+        /// </summary>
+        public void CleanUpEdit()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WinButton uICloseButton = this.UIMainWindowWindow1.UICloseButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(538, 356));
+
+            // Click 'Close' button
+            Mouse.Click(uICloseButton, new Point(19, 11));
+        }
+        
+        /// <summary>
+        /// CreateJobDouble - Use 'CreateJobDoubleParams' to pass parameters into this method.
+        /// </summary>
+        public void CreateJobDouble()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WpfButton uINeueEinsatzButton = this.UIMainWindowWindow.UINeueEinsatzButton;
+            WpfEdit uIJobNameEdit = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobNameEdit;
+            WpfDatePicker uIJobStartDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobStartDatePicker;
+            WpfDatePicker uIJobEndDatePicker = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobEndDatePicker;
+            WpfButton uISpeichernButton1 = this.UIMainWindowWindow.UINewEmployeexamlPane.UISpeichernButton1;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(111, 301));
+
+            // Click 'Neue Einsatz' button
+            Mouse.Click(uINeueEinsatzButton, new Point(109, 11));
+
+            // Type 'DoubleJob' in 'jobName' text box
+            uIJobNameEdit.Text = this.CreateJobDoubleParams.UIJobNameEditText;
+
+            // Select '10-Jun-2016' in 'jobStart' date picker
+            uIJobStartDatePicker.DateAsString = this.CreateJobDoubleParams.UIJobStartDatePickerDateAsString;
+
+            // Select '10-Jun-2016' in 'jobEnd' date picker
+            uIJobEndDatePicker.DateAsString = this.CreateJobDoubleParams.UIJobEndDatePickerDateAsString;
+
+            // Click 'Speichern' button
+            Mouse.Click(uISpeichernButton1, new Point(25, 12));
+        }
+        
+        /// <summary>
+        /// CheckEditJobDouble - Use 'CheckEditJobDoubleExpectedValues' to pass parameters into this method.
+        /// </summary>
+        public void CheckEditJobDouble()
+        {
+            #region Variable Declarations
+            WpfText uIDoppeleinsatzfürMitaText = this.UIMainWindowWindow.UINewEmployeexamlPane.UIDoppeleinsatzfürMitaText;
+            #endregion
+
+            // Verify that the 'DisplayText' property of 'Doppeleinsatz für Mitarbeiter. Das ist Nicht Erlau...' label equals 'Doppeleinsatz für Mitarbeiter. Das ist Nicht Erlaubt!'
+            Assert.AreEqual(this.CheckEditJobDoubleExpectedValues.UIDoppeleinsatzfürMitaTextDisplayText, uIDoppeleinsatzfürMitaText.DisplayText, "Error Message Didn\'t Show.. it should\'ve");
+        }
+        
+        /// <summary>
+        /// CleanUpJobDouble
+        /// </summary>
+        public void CleanUpJobDouble()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WinButton uICloseButton = this.UIMainWindowWindow1.UICloseButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(607, 395));
+
+            // Click 'Close' button
+            Mouse.Click(uICloseButton, new Point(18, 9));
+        }
+        
+        /// <summary>
+        /// CheckCreateJob - Use 'CheckCreateJobExpectedValues' to pass parameters into this method.
+        /// </summary>
+        public void CheckCreateJob()
+        {
+            #region Variable Declarations
+            WpfListItem uITest662016120000AMListItem = this.UIMainWindowWindow.UINewEmployeexamlPane.UIJobsListBoxList.UITest662016120000AMListItem;
+            #endregion
+
+            // Verify that the 'DisplayText' property of 'Test - 6/6/2016 12:00:00 AM' list item equals 'Test - 6/6/2016 12:00:00 AM'
+            Assert.AreEqual(this.CheckCreateJobExpectedValues.UITest662016120000AMListItemDisplayText, uITest662016120000AMListItem.DisplayText, "Failed to create job");
+        }
+        
+        /// <summary>
+        /// CleanUpCreatejob
+        /// </summary>
+        public void CleanUpCreatejob()
+        {
+            #region Variable Declarations
+            WpfWindow uIMainWindowWindow = this.UIMainWindowWindow;
+            WinButton uICloseButton = this.UIMainWindowWindow1.UICloseButton;
+            #endregion
+
+            // Click 'MainWindow' window
+            Mouse.Click(uIMainWindowWindow, new Point(569, 372));
+
+            // Click 'Close' button
+            Mouse.Click(uICloseButton, new Point(18, 15));
+        }
+        
         #region Properties
         public virtual RecordedMethodTestParams RecordedMethodTestParams
         {
@@ -273,6 +537,102 @@ namespace CodedUITestProject1
             }
         }
         
+        public virtual CreateJobParams CreateJobParams
+        {
+            get
+            {
+                if ((this.mCreateJobParams == null))
+                {
+                    this.mCreateJobParams = new CreateJobParams();
+                }
+                return this.mCreateJobParams;
+            }
+        }
+        
+        public virtual AssertJobCreatedExpectedValues AssertJobCreatedExpectedValues
+        {
+            get
+            {
+                if ((this.mAssertJobCreatedExpectedValues == null))
+                {
+                    this.mAssertJobCreatedExpectedValues = new AssertJobCreatedExpectedValues();
+                }
+                return this.mAssertJobCreatedExpectedValues;
+            }
+        }
+        
+        public virtual EditJobParams EditJobParams
+        {
+            get
+            {
+                if ((this.mEditJobParams == null))
+                {
+                    this.mEditJobParams = new EditJobParams();
+                }
+                return this.mEditJobParams;
+            }
+        }
+        
+        public virtual JobEditParams JobEditParams
+        {
+            get
+            {
+                if ((this.mJobEditParams == null))
+                {
+                    this.mJobEditParams = new JobEditParams();
+                }
+                return this.mJobEditParams;
+            }
+        }
+        
+        public virtual CheckEditJobExpectedValues CheckEditJobExpectedValues
+        {
+            get
+            {
+                if ((this.mCheckEditJobExpectedValues == null))
+                {
+                    this.mCheckEditJobExpectedValues = new CheckEditJobExpectedValues();
+                }
+                return this.mCheckEditJobExpectedValues;
+            }
+        }
+        
+        public virtual CreateJobDoubleParams CreateJobDoubleParams
+        {
+            get
+            {
+                if ((this.mCreateJobDoubleParams == null))
+                {
+                    this.mCreateJobDoubleParams = new CreateJobDoubleParams();
+                }
+                return this.mCreateJobDoubleParams;
+            }
+        }
+        
+        public virtual CheckEditJobDoubleExpectedValues CheckEditJobDoubleExpectedValues
+        {
+            get
+            {
+                if ((this.mCheckEditJobDoubleExpectedValues == null))
+                {
+                    this.mCheckEditJobDoubleExpectedValues = new CheckEditJobDoubleExpectedValues();
+                }
+                return this.mCheckEditJobDoubleExpectedValues;
+            }
+        }
+        
+        public virtual CheckCreateJobExpectedValues CheckCreateJobExpectedValues
+        {
+            get
+            {
+                if ((this.mCheckCreateJobExpectedValues == null))
+                {
+                    this.mCheckCreateJobExpectedValues = new CheckCreateJobExpectedValues();
+                }
+                return this.mCheckCreateJobExpectedValues;
+            }
+        }
+        
         public UISpotifyWindow UISpotifyWindow
         {
             get
@@ -308,6 +668,18 @@ namespace CodedUITestProject1
                 return this.mUIMainWindowWindow;
             }
         }
+        
+        public UIMainWindowWindow1 UIMainWindowWindow1
+        {
+            get
+            {
+                if ((this.mUIMainWindowWindow1 == null))
+                {
+                    this.mUIMainWindowWindow1 = new UIMainWindowWindow1();
+                }
+                return this.mUIMainWindowWindow1;
+            }
+        }
         #endregion
         
         #region Fields
@@ -321,11 +693,29 @@ namespace CodedUITestProject1
         
         private RecordedMethod2Params mRecordedMethod2Params;
         
+        private CreateJobParams mCreateJobParams;
+        
+        private AssertJobCreatedExpectedValues mAssertJobCreatedExpectedValues;
+        
+        private EditJobParams mEditJobParams;
+        
+        private JobEditParams mJobEditParams;
+        
+        private CheckEditJobExpectedValues mCheckEditJobExpectedValues;
+        
+        private CreateJobDoubleParams mCreateJobDoubleParams;
+        
+        private CheckEditJobDoubleExpectedValues mCheckEditJobDoubleExpectedValues;
+        
+        private CheckCreateJobExpectedValues mCheckCreateJobExpectedValues;
+        
         private UISpotifyWindow mUISpotifyWindow;
         
         private UIWpfWindow mUIWpfWindow;
         
         private UIMainWindowWindow mUIMainWindowWindow;
+        
+        private UIMainWindowWindow1 mUIMainWindowWindow1;
         #endregion
     }
     
@@ -451,6 +841,166 @@ namespace CodedUITestProject1
         /// Select '06-Jun-2016' in 'jobEnd' date picker
         /// </summary>
         public string UIJobEndDatePickerDateAsString = "06-Jun-2016";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'CreateJob'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class CreateJobParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'Test' in 'jobName' text box
+        /// </summary>
+        public string UIJobNameEditText = "Test";
+        
+        /// <summary>
+        /// Select 'Affolter' in 'jobMit' combo box
+        /// </summary>
+        public string UIJobMitComboBoxSelectedItem = "Affolter";
+        
+        /// <summary>
+        /// Select 'Projekt YellowLabel' in 'jobProj' combo box
+        /// </summary>
+        public string UIJobProjComboBoxSelectedItem = "Projekt YellowLabel";
+        
+        /// <summary>
+        /// Select '06-Jun-2016' in 'jobStart' date picker
+        /// </summary>
+        public string UIJobStartDatePickerDateAsString = "06-Jun-2016";
+        
+        /// <summary>
+        /// Select '06-Jun-2016' in 'jobEnd' date picker
+        /// </summary>
+        public string UIJobEndDatePickerDateAsString = "06-Jun-2016";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'AssertJobCreated'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class AssertJobCreatedExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Verify that the 'Name' property of 'Test' list item equals 'Test'
+        /// </summary>
+        public string UITestListItemName = "Test";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'EditJob'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class EditJobParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Select '08-Jun-2016' in 'jobStart' date picker
+        /// </summary>
+        public string UIJobStartDatePickerDateAsString = "08-Jun-2016";
+        
+        /// <summary>
+        /// Select '08-Jun-2016' in 'jobEnd' date picker
+        /// </summary>
+        public string UIJobEndDatePickerDateAsString = "08-Jun-2016";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'JobEdit'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class JobEditParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Select '08-Jun-2016' in 'jobStart' date picker
+        /// </summary>
+        public string UIJobStartDatePickerDateAsString = "08-Jun-2016";
+        
+        /// <summary>
+        /// Select '08-Jun-2016' in 'jobEnd' date picker
+        /// </summary>
+        public string UIJobEndDatePickerDateAsString = "08-Jun-2016";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'CheckEditJob'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class CheckEditJobExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Verify that the 'Name' property of 'Test1 - 6/8/2016 12:00:00 AM' list item equals 'Test1 - 6/8/2016 12:00:00 AM'
+        /// </summary>
+        public string UITest1682016120000AMListItemName = "Test1 - 6/8/2016 12:00:00 AM";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'CreateJobDouble'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class CreateJobDoubleParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Type 'DoubleJob' in 'jobName' text box
+        /// </summary>
+        public string UIJobNameEditText = "DoubleJob";
+        
+        /// <summary>
+        /// Select '10-Jun-2016' in 'jobStart' date picker
+        /// </summary>
+        public string UIJobStartDatePickerDateAsString = "10-Jun-2016";
+        
+        /// <summary>
+        /// Select '10-Jun-2016' in 'jobEnd' date picker
+        /// </summary>
+        public string UIJobEndDatePickerDateAsString = "10-Jun-2016";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'CheckEditJobDouble'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class CheckEditJobDoubleExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Verify that the 'DisplayText' property of 'Doppeleinsatz für Mitarbeiter. Das ist Nicht Erlau...' label equals 'Doppeleinsatz für Mitarbeiter. Das ist Nicht Erlaubt!'
+        /// </summary>
+        public string UIDoppeleinsatzfürMitaTextDisplayText = "Doppeleinsatz für Mitarbeiter. Das ist Nicht Erlaubt!";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Parameters to be passed into 'CheckCreateJob'
+    /// </summary>
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class CheckCreateJobExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Verify that the 'DisplayText' property of 'Test - 6/6/2016 12:00:00 AM' list item equals 'Test - 6/6/2016 12:00:00 AM'
+        /// </summary>
+        public string UITest662016120000AMListItemDisplayText = "Test - 6/6/2016 12:00:00 AM";
         #endregion
     }
     
@@ -643,6 +1193,22 @@ namespace CodedUITestProject1
                 return this.mUINeueEinsatzButton;
             }
         }
+        
+        public WpfButton UIEinsatzListenansichtButton
+        {
+            get
+            {
+                if ((this.mUIEinsatzListenansichtButton == null))
+                {
+                    this.mUIEinsatzListenansichtButton = new WpfButton(this);
+                    #region Search Criteria
+                    this.mUIEinsatzListenansichtButton.SearchProperties[WpfButton.PropertyNames.Name] = "Einsatz Listenansicht";
+                    this.mUIEinsatzListenansichtButton.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIEinsatzListenansichtButton;
+            }
+        }
         #endregion
         
         #region Fields
@@ -653,6 +1219,8 @@ namespace CodedUITestProject1
         private WpfButton mUIMitarbeiterListenansButton;
         
         private WpfButton mUINeueEinsatzButton;
+        
+        private WpfButton mUIEinsatzListenansichtButton;
         #endregion
     }
     
@@ -826,6 +1394,62 @@ namespace CodedUITestProject1
                 return this.mUISpeichernButton1;
             }
         }
+        
+        public WpfComboBox UIJobMitComboBox
+        {
+            get
+            {
+                if ((this.mUIJobMitComboBox == null))
+                {
+                    this.mUIJobMitComboBox = new WpfComboBox(this);
+                    #region Search Criteria
+                    this.mUIJobMitComboBox.SearchProperties[WpfComboBox.PropertyNames.AutomationId] = "jobMit";
+                    this.mUIJobMitComboBox.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIJobMitComboBox;
+            }
+        }
+        
+        public UIJobsListBoxList UIJobsListBoxList
+        {
+            get
+            {
+                if ((this.mUIJobsListBoxList == null))
+                {
+                    this.mUIJobsListBoxList = new UIJobsListBoxList(this);
+                }
+                return this.mUIJobsListBoxList;
+            }
+        }
+        
+        public UIItemList UIItemList
+        {
+            get
+            {
+                if ((this.mUIItemList == null))
+                {
+                    this.mUIItemList = new UIItemList(this);
+                }
+                return this.mUIItemList;
+            }
+        }
+        
+        public WpfText UIDoppeleinsatzfürMitaText
+        {
+            get
+            {
+                if ((this.mUIDoppeleinsatzfürMitaText == null))
+                {
+                    this.mUIDoppeleinsatzfürMitaText = new WpfText(this);
+                    #region Search Criteria
+                    this.mUIDoppeleinsatzfürMitaText.SearchProperties[WpfText.PropertyNames.AutomationId] = "success";
+                    this.mUIDoppeleinsatzfürMitaText.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUIDoppeleinsatzfürMitaText;
+            }
+        }
         #endregion
         
         #region Fields
@@ -848,6 +1472,14 @@ namespace CodedUITestProject1
         private WpfDatePicker mUIJobEndDatePicker;
         
         private WpfButton mUISpeichernButton1;
+        
+        private WpfComboBox mUIJobMitComboBox;
+        
+        private UIJobsListBoxList mUIJobsListBoxList;
+        
+        private UIItemList mUIItemList;
+        
+        private WpfText mUIDoppeleinsatzfürMitaText;
         #endregion
     }
     
@@ -884,6 +1516,150 @@ namespace CodedUITestProject1
         
         #region Fields
         private WpfListItem mUIJohnListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIJobsListBoxList : WpfList
+    {
+        
+        public UIJobsListBoxList(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfList.PropertyNames.AutomationId] = "jobsListBox";
+            this.WindowTitles.Add("MainWindow");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfListItem UITestListItem
+        {
+            get
+            {
+                if ((this.mUITestListItem == null))
+                {
+                    this.mUITestListItem = new WpfListItem(this);
+                    #region Search Criteria
+                    this.mUITestListItem.SearchProperties[WpfListItem.PropertyNames.Name] = "Test";
+                    this.mUITestListItem.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUITestListItem;
+            }
+        }
+        
+        public WpfListItem UITest1682016120000AMListItem
+        {
+            get
+            {
+                if ((this.mUITest1682016120000AMListItem == null))
+                {
+                    this.mUITest1682016120000AMListItem = new WpfListItem(this);
+                    #region Search Criteria
+                    this.mUITest1682016120000AMListItem.SearchProperties[WpfListItem.PropertyNames.Name] = "Test1 - 6/8/2016 12:00:00 AM";
+                    this.mUITest1682016120000AMListItem.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUITest1682016120000AMListItem;
+            }
+        }
+        
+        public WpfListItem UITest662016120000AMListItem
+        {
+            get
+            {
+                if ((this.mUITest662016120000AMListItem == null))
+                {
+                    this.mUITest662016120000AMListItem = new WpfListItem(this);
+                    #region Search Criteria
+                    this.mUITest662016120000AMListItem.SearchProperties[WpfListItem.PropertyNames.Name] = "Test - 6/6/2016 12:00:00 AM";
+                    this.mUITest662016120000AMListItem.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUITest662016120000AMListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfListItem mUITestListItem;
+        
+        private WpfListItem mUITest1682016120000AMListItem;
+        
+        private WpfListItem mUITest662016120000AMListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIItemList : WpfList
+    {
+        
+        public UIItemList(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Search Criteria
+            this.SearchProperties[WpfList.PropertyNames.Instance] = "7";
+            this.WindowTitles.Add("MainWindow");
+            #endregion
+        }
+        
+        #region Properties
+        public WpfListItem UITest1ListItem
+        {
+            get
+            {
+                if ((this.mUITest1ListItem == null))
+                {
+                    this.mUITest1ListItem = new WpfListItem(this);
+                    #region Search Criteria
+                    this.mUITest1ListItem.SearchProperties[WpfListItem.PropertyNames.Name] = "Test1";
+                    this.mUITest1ListItem.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUITest1ListItem;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WpfListItem mUITest1ListItem;
+        #endregion
+    }
+    
+    [GeneratedCode("Coded UITest Builder", "14.0.23107.0")]
+    public class UIMainWindowWindow1 : WinWindow
+    {
+        
+        public UIMainWindowWindow1()
+        {
+            #region Search Criteria
+            this.SearchProperties[WinWindow.PropertyNames.Name] = "MainWindow";
+            this.SearchProperties.Add(new PropertyExpression(WinWindow.PropertyNames.ClassName, "HwndWrapper", PropertyExpressionOperator.Contains));
+            this.WindowTitles.Add("MainWindow");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UICloseButton
+        {
+            get
+            {
+                if ((this.mUICloseButton == null))
+                {
+                    this.mUICloseButton = new WinButton(this);
+                    #region Search Criteria
+                    this.mUICloseButton.SearchProperties[WinButton.PropertyNames.Name] = "Close";
+                    this.mUICloseButton.WindowTitles.Add("MainWindow");
+                    #endregion
+                }
+                return this.mUICloseButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUICloseButton;
         #endregion
     }
 }
