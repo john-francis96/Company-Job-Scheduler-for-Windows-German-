@@ -1,2 +1,4 @@
 Company-Job-Scheduler-for-Windows-German-
-Erstelle Projekten. Mitarbeiter haben Einsätze die in ein Monats-Agenda angezeight sind. Nur in Deutsch zurzeit verfügbar.
+-----------------------------------------
+Job scheduler for teams. Team members have tasks which are represented in a Monthly Agenda. Currently only available in German!
+
